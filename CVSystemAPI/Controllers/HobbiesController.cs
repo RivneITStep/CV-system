@@ -12,15 +12,22 @@ namespace API_Real_Base_Test_Own_Context.Controllers
 {
     [Route("api/getHobbies")]
     [ApiController]
-    public class HobbiesController
+    public class HobbiesController : Controller
     {
         [HttpGet]
-        public ActionResult<IEnumerable<Hobbies>> Get()
+        public IActionResult Get()
         {
             using (HobbiesContext db = new HobbiesContext(OptionsHelper<HobbiesContext>.GetOptions()))
             {
                 var hobbies = db.Hobbies.ToList();
-                return hobbies;
+                if (hobbies == null)
+                {
+                    return NoContent();
+                }
+                else
+                {
+                    return Ok(hobbies);
+                }
             }
         }
     }

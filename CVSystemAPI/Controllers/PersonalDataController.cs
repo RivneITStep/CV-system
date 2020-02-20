@@ -12,15 +12,22 @@ namespace API_Real_Base_Test_Own_Context.Controllers
 {
     [Route("api/getUsers")]
     [ApiController]
-    public class PersonalDataController
+    public class PersonalDataController : Controller
     {
         [HttpGet]
-        public ActionResult<IEnumerable<PersonalData>> Get()
+        public IActionResult Get()
         {
             using (PersonalDataContext db = new PersonalDataContext(OptionsHelper<PersonalDataContext>.GetOptions()))
             {
                 var users = db.Personal_Data.ToList();
-                return users;
+                if (users == null)
+                {
+                    return NoContent();
+                }
+                else
+                {
+                    return Ok(users);
+                }
             }
         }
     }

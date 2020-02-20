@@ -11,15 +11,22 @@ namespace API_Real_Base_Test_Own_Context.Controllers
 {
     [Route("api/getSkills")]
     [ApiController]
-    public class SkillsController
+    public class SkillsController : Controller
     {
         [HttpGet]
-        public ActionResult<IEnumerable<Skills>> Get()
+        public IActionResult Get()
         {
             using (SkillsContext db = new SkillsContext(OptionsHelper<SkillsContext>.GetOptions()))
             {
                 var skills = db.Skills.ToList();
-                return skills;
+                if (skills == null)
+                {
+                    return NoContent();
+                }
+                else
+                {
+                    return Ok(skills);
+                }
             }
         }
     }

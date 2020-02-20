@@ -11,15 +11,22 @@ namespace API_Real_Base_Test_Own_Context.Controllers
 {
     [Route("api/getLanguages")]
     [ApiController]
-    public class LanguagesController
+    public class LanguagesController :Controller
     {
         [HttpGet]
-        public ActionResult<IEnumerable<Languages>> Get()
+        public IActionResult Get()
         {
             using (LanguagesContext db = new LanguagesContext(OptionsHelper<LanguagesContext>.GetOptions()))
             {
                 var languages = db.Languages.ToList();
-                return languages;
+                if(languages == null)
+                {
+                    return NoContent();
+                }
+                else
+                {
+                    return Ok(languages);
+                }
             }
         }
     }

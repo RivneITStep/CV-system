@@ -11,15 +11,22 @@ namespace API_Real_Base_Test_Own_Context.Controllers
 {
     [Route("api/getPersonalities")]
     [ApiController]
-    public class PersonalityController
+    public class PersonalityController : Controller
     {
         [HttpGet]
-        public ActionResult<IEnumerable<Personality>> Get()
+        public IActionResult Get()
         {
             using (PersonalityContext db = new PersonalityContext(OptionsHelper<PersonalityContext>.GetOptions()))
             {
                 var personalities = db.Personality.ToList();
-                return personalities;
+                if (personalities == null)
+                {
+                    return NoContent();
+                }
+                else
+                {
+                    return Ok(personalities);
+                }
             }
         }
     }
