@@ -21,8 +21,9 @@ namespace API_Real_Base_Test_Own_Context.Controllers
             {
                 var users = db.Personal_Data.ToList();
                 if (users == null)
+                //if (users == null)
                 {
-                    return NoContent();
+                    return NoContent(); //тест
                 }
                 else
                 {
@@ -68,7 +69,7 @@ namespace API_Real_Base_Test_Own_Context.Controllers
                 {
                     return NotFound();
                 }
-                else if(found.Count == 1)
+                else if (found.Count == 1)
                 {
                     var person = found[0];
                     return Ok(person);
