@@ -30,5 +30,51 @@ namespace API_Real_Base_Test_Own_Context.Controllers
                 }
             }
         }
+        [HttpGet("{secondName}")]
+        public IActionResult Get(string secondName)
+        {
+            using (PersonalDataContext db = new PersonalDataContext(OptionsHelper<PersonalDataContext>.GetOptions()))
+            {
+                var users = db.Personal_Data.ToList();
+                if (users == null)
+                {
+                    return NoContent();
+                }
+                var found = users.FindAll(x => x.LastName.ToLower().Equals(secondName.ToLower()));
+                if (found == null)
+                {
+                    return NotFound();
+                }
+                else if (found.Count == 1)
+                {
+                    var person = found[0];
+                    return Ok(person);
+                }
+                return Ok(found);
+            }
+        }
+        [HttpGet("{firstName}&{secondName}")]
+        public IActionResult Get(string firstName, string secondName)
+        {
+            using (PersonalDataContext db = new PersonalDataContext(OptionsHelper<PersonalDataContext>.GetOptions()))
+            {
+                var users = db.Personal_Data.ToList();
+                if (users == null)
+                {
+                    return NoContent();
+                }
+                var found = users.FindAll(x => x.LastName.ToLower().Equals(secondName.ToLower()) && x.FirstName.ToLower().Equals(firstName.ToLower()));
+                if (found == null)
+                {
+                    return NotFound();
+                }
+                else if(found.Count == 1)
+                {
+                    var person = found[0];
+                    return Ok(person);
+                }
+                return Ok(found);
+            }
+        }
     }
 }
