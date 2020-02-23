@@ -14,6 +14,7 @@
     "gulp-sass": "^4.0.2"
   },
   "dependencies": {
-    "gulp-uglifycss": "^1.1.0"
+    "gulp-uglifycss": "^1.1.0",
+    "jquery-slimscroll": "^1.3.8"
   }
 }
