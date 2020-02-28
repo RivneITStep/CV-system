@@ -6,11 +6,11 @@ using API_Real_Base_Test_Own_Context.Helpers;
 using API_Real_Base_Test_Own_Context.Models;
 using Microsoft.AspNetCore.Mvc;
 
-namespace API_Real_Base_Test_Own_Context.Controllers
+namespace CVSystemAPI.Controllers
 {
-    [Route("api/getPersonalities")]
+    [Route("api/getAddresses")]
     [ApiController]
-    public class PersonalityController : Controller
+    public class AddressController : Controller
     {
         ControllerHelper ch = new ControllerHelper();
         [HttpGet]
@@ -18,8 +18,8 @@ namespace API_Real_Base_Test_Own_Context.Controllers
         {
             using (CVContext db = new CVContext(OptionsHelper<CVContext>.GetOptions()))
             {
-                var personalities = db.Personality.ToList();
-                return ch.GetResult(personalities);
+                var addresses = db.Address.ToList();
+                return ch.GetResult(addresses);
             }
         }
     }

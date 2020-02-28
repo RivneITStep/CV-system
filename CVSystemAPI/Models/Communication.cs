@@ -1,0 +1,18 @@
+﻿using System;
+using System.Collections.Generic;
+
+namespace API_Real_Base_Test_Own_Context.Models
+{
+    public partial class Communication
+    {
+        public int CommunicationId { get; set; }
+        public string Phone { get; set; }
+        public string Email { get; set; }
+        public string Skype { get; set; }
+        public string Viber { get; set; }
+        public string WhatsApp { get; set; }
+        public int PersonalId { get; set; }
+
+        public virtual PersonalData Personal { get; set; }
+    }
+}

@@ -1,17 +1,16 @@
 ﻿using API_Real_Base_Test_Own_Context.Helpers;
 using API_Real_Base_Test_Own_Context.Models;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace API_Real_Base_Test_Own_Context.Controllers
+namespace CVSystemAPI.Controllers
 {
-    [Route("api/getUsers")]
+    [Route("api/getHRDatas")]
     [ApiController]
-    public class PersonalDataController : Controller
+    public class HrDataController : Controller
     {
         ControllerHelper ch = new ControllerHelper();
         [HttpGet]
@@ -19,8 +18,8 @@ namespace API_Real_Base_Test_Own_Context.Controllers
         {
             using (CVContext db = new CVContext(OptionsHelper<CVContext>.GetOptions()))
             {
-                var users = db.PersonalData.ToList();
-                return ch.GetResult(users);
+                var hrdatas = db.HrData.ToList();
+                return ch.GetResult(hrdatas);
             }
         }
     }

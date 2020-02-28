@@ -1,5 +1,4 @@
-﻿using API_Real_Base_Test_Own_Context.Contexts;
-using API_Real_Base_Test_Own_Context.Helpers;
+﻿using API_Real_Base_Test_Own_Context.Helpers;
 using API_Real_Base_Test_Own_Context.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
@@ -14,20 +13,14 @@ namespace API_Real_Base_Test_Own_Context.Controllers
     [ApiController]
     public class HobbiesController : Controller
     {
+        ControllerHelper ch = new ControllerHelper();
         [HttpGet]
         public IActionResult Get()
         {
-            using (HobbiesContext db = new HobbiesContext(OptionsHelper<HobbiesContext>.GetOptions()))
+            using (CVContext db = new CVContext(OptionsHelper<CVContext>.GetOptions()))
             {
                 var hobbies = db.Hobbies.ToList();
-                if (hobbies == null)
-                {
-                    return NoContent();
-                }
-                else
-                {
-                    return Ok(hobbies);
-                }
+                return ch.GetResult(hobbies);
             }
         }
     }
