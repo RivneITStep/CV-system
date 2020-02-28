@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using API_Real_Base_Test_Own_Context.Helpers;
 using API_Real_Base_Test_Own_Context.Models;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.AspNetCore.Mvc;
 
 namespace CVSystemAPI.Controllers
@@ -20,6 +21,15 @@ namespace CVSystemAPI.Controllers
             {
                 var addresses = db.Address.ToList();
                 return ch.GetResult(addresses);
+            }
+        }
+        [HttpGet("getPersons/{cityName}")]
+        public IActionResult GetPersonsByCityName(string cityName)
+        {
+            using (CVContext db = new CVContext(OptionsHelper<CVContext>.GetOptions()))
+            {
+                var persons = db.Address.Include(x => x.Personal).Where(x => x.City.ToLower().Equals(cityName.ToLower())).Select(x=>x.Personal).ToList();
+                return ch.GetResult(persons);
             }
         }
     }

@@ -10,6 +10,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
+using Newtonsoft.Json;
 
 namespace API_Real_Base_Test_Own_Context
 {
@@ -26,6 +27,9 @@ namespace API_Real_Base_Test_Own_Context
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllers();
+            services.AddControllersWithViews()
+                .AddNewtonsoftJson
+                (options => options.SerializerSettings.ReferenceLoopHandling = ReferenceLoopHandling.Ignore);
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -45,6 +49,10 @@ namespace API_Real_Base_Test_Own_Context
             {
                 endpoints.MapControllers();
             });
+
+            app.UseDefaultFiles();
+
+            app.UseStaticFiles();
         }
     }
 }

@@ -91,10 +91,14 @@ C:\Users\Admin\Desktop\cv-system\FOR PUSH\CV-system\CVSystemAPI\bin\Debug\netcor
 C:\Users\Admin\Desktop\cv-system\FOR PUSH\CV-system\CVSystemAPI\obj\Debug\netcoreapp3.1\CVSystemAPI.csprojAssemblyReference.cache
 C:\Users\Admin\Desktop\cv-system\FOR PUSH\CV-system\CVSystemAPI\obj\Debug\netcoreapp3.1\staticwebassets\CVSystemAPI.StaticWebAssets.Manifest.cache
 C:\Users\Admin\Desktop\cv-system\FOR PUSH\CV-system\CVSystemAPI\obj\Debug\netcoreapp3.1\staticwebassets\CVSystemAPI.StaticWebAssets.xml
-C:\Users\Admin\Desktop\cv-system\FOR PUSH\CV-system\CVSystemAPI\obj\Debug\netcoreapp3.1\CVSystemAPI.MvcApplicationPartsAssemblyInfo.cache
 C:\Users\Admin\Desktop\cv-system\FOR PUSH\CV-system\CVSystemAPI\obj\Debug\netcoreapp3.1\CVSystemAPI.AssemblyInfoInputs.cache
 C:\Users\Admin\Desktop\cv-system\FOR PUSH\CV-system\CVSystemAPI\obj\Debug\netcoreapp3.1\CVSystemAPI.AssemblyInfo.cs
 C:\Users\Admin\Desktop\cv-system\FOR PUSH\CV-system\CVSystemAPI\obj\Debug\netcoreapp3.1\CVSystemAPI.RazorTargetAssemblyInfo.cache
 C:\Users\Admin\Desktop\cv-system\FOR PUSH\CV-system\CVSystemAPI\obj\Debug\netcoreapp3.1\CVSystemAPI.csproj.CopyComplete
 C:\Users\Admin\Desktop\cv-system\FOR PUSH\CV-system\CVSystemAPI\obj\Debug\netcoreapp3.1\CVSystemAPI.dll
 C:\Users\Admin\Desktop\cv-system\FOR PUSH\CV-system\CVSystemAPI\obj\Debug\netcoreapp3.1\CVSystemAPI.pdb
+C:\Users\Admin\Desktop\cv-system\FOR PUSH\CV-system\CVSystemAPI\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.JsonPatch.dll
+C:\Users\Admin\Desktop\cv-system\FOR PUSH\CV-system\CVSystemAPI\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Mvc.NewtonsoftJson.dll
+C:\Users\Admin\Desktop\cv-system\FOR PUSH\CV-system\CVSystemAPI\bin\Debug\netcoreapp3.1\Newtonsoft.Json.dll
+C:\Users\Admin\Desktop\cv-system\FOR PUSH\CV-system\CVSystemAPI\bin\Debug\netcoreapp3.1\Newtonsoft.Json.Bson.dll
+C:\Users\Admin\Desktop\cv-system\FOR PUSH\CV-system\CVSystemAPI\obj\Debug\netcoreapp3.1\CVSystemAPI.MvcApplicationPartsAssemblyInfo.cache
