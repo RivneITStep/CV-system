@@ -29,7 +29,7 @@ namespace API_Real_Base_Test_Own_Context.Controllers
         {
             using (CVContext db = new CVContext(OptionsHelper<CVContext>.GetOptions()))
             {
-                var skills = db.Skills.Include(s => s.PersonSoftwareSkill).Where(x => x.PersonSoftwareSkill.Where(x => x.PersonalDataId == personId).Any()).ToList();
+                var skills = db.Skills.Include(s => s.PersonSoftwareSkill).Where(x => x.PersonSoftwareSkill.Where(y => y.PersonalDataId == personId).Any()).ToList();
                 return ch.GetResult(skills);
             }
         }
@@ -40,7 +40,7 @@ namespace API_Real_Base_Test_Own_Context.Controllers
             {
                 var skills = db.Skills.Include(s => s.PersonSoftwareSkill).Where(
                     x => x.PersonSoftwareSkill.Where(
-                    x => x.PersonalData.FirstName.ToLower().Equals(firstName.ToLower()) && x.PersonalData.LastName.ToLower().Equals(lastName.ToLower()))
+                    y => y.PersonalData.FirstName.ToLower().Equals(firstName.ToLower()) && y.PersonalData.LastName.ToLower().Equals(lastName.ToLower()))
                     .Any()).ToList();
                 return ch.GetResult(skills);
             }

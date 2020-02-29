@@ -23,7 +23,7 @@ namespace API_Real_Base_Test_Own_Context.Controllers
                 return ch.GetResult(users);
             }
         }
-        [HttpGet("{skillId}")]
+        [HttpGet("skill/{skillId}")]
         public IActionResult GetPersonsBySkillId(int skillId)
         {
             using (CVContext db = new CVContext(OptionsHelper<CVContext>.GetOptions()))
@@ -39,6 +39,24 @@ namespace API_Real_Base_Test_Own_Context.Controllers
             {
                 var persons = db.PersonalData.Include(x => x.PersonSoftwareSkill).Where(x => x.PersonSoftwareSkill.Where(y => y.Skill.SkillName.ToLower().Equals(skillName.ToLower())).Any()).ToList();
                 return ch.GetResult(persons);
+            }
+        }
+        [HttpGet("{lastName}")]
+        public IActionResult GetByLastName(string lastName)
+        {
+            using (CVContext db = new CVContext(OptionsHelper<CVContext>.GetOptions()))
+            {
+                var users = db.PersonalData.Where(x => x.LastName.ToLower().Equals(lastName.ToLower())).ToList();
+                return ch.GetResult(users);
+            }
+        }
+        [HttpGet("{firstName}&{lastName}")]
+        public IActionResult GetByFullName(string firstName, string lastName)
+        {
+            using (CVContext db = new CVContext(OptionsHelper<CVContext>.GetOptions()))
+            {
+                var users = db.PersonalData.Where(x => x.FirstName.ToLower().Equals(firstName.ToLower()) && x.LastName.ToLower().Equals(lastName.ToLower())).ToList();
+                return ch.GetResult(users);
             }
         }
     }
