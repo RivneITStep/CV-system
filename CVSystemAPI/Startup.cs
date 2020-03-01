@@ -12,7 +12,7 @@ using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using Newtonsoft.Json;
 
-namespace API_Real_Base_Test_Own_Context
+namespace CVSystemAPI
 {
     public class Startup
     {

@@ -1,9 +1,9 @@
 ﻿using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata;
-using API_Real_Base_Test_Own_Context.Helpers;
+using CVSystemAPI.Helpers;
 
-namespace API_Real_Base_Test_Own_Context.Models
+namespace CVSystemAPI.Models
 {
     public partial class CVContext : DbContext
     {

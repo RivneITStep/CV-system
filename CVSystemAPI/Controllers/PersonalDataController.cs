@@ -1,5 +1,5 @@
-﻿using API_Real_Base_Test_Own_Context.Helpers;
-using API_Real_Base_Test_Own_Context.Models;
+﻿using CVSystemAPI.Helpers;
+using CVSystemAPI.Models;
 using CVSystemAPI.Helpers;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
@@ -8,7 +8,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace API_Real_Base_Test_Own_Context.Controllers
+namespace CVSystemAPI.Controllers
 {
     [Route("api/getUsers")]
     [ApiController]

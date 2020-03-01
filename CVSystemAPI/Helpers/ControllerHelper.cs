@@ -5,7 +5,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace API_Real_Base_Test_Own_Context.Helpers
+namespace CVSystemAPI.Helpers
 {
     public class ControllerHelper : Controller
     {

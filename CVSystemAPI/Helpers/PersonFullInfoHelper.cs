@@ -1,4 +1,4 @@
-﻿using API_Real_Base_Test_Own_Context.Models;
+﻿using CVSystemAPI.Models;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;

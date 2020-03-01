@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace API_Real_Base_Test_Own_Context.Models
+namespace CVSystemAPI.Models
 {
     public partial class Languages
     {

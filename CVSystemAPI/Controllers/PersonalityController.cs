@@ -2,11 +2,11 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using API_Real_Base_Test_Own_Context.Helpers;
-using API_Real_Base_Test_Own_Context.Models;
+using CVSystemAPI.Helpers;
+using CVSystemAPI.Models;
 using Microsoft.AspNetCore.Mvc;
 
-namespace API_Real_Base_Test_Own_Context.Controllers
+namespace CVSystemAPI.Controllers
 {
     [Route("api/getPersonalities")]
     [ApiController]
