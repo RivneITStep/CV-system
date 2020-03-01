@@ -1,6 +1,7 @@
 ﻿using API_Real_Base_Test_Own_Context.Helpers;
 using API_Real_Base_Test_Own_Context.Models;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -18,7 +19,16 @@ namespace CVSystemAPI.Controllers
         {
             using (CVContext db = new CVContext(OptionsHelper<CVContext>.GetOptions()))
             {
-                var admindatas = db.AdminData.ToList();
+                var admindatas = db.LoginAdminBinder.Include(x => x.Login).ToList();
+                return ch.GetResult(admindatas);
+            }
+        }
+        [HttpGet("{adminName}")]
+        public IActionResult Get(string adminName)
+        {
+            using (CVContext db = new CVContext(OptionsHelper<CVContext>.GetOptions()))
+            {
+                var admindatas = db.LoginAdminBinder.Include(x => x.Login).Where(y => y.Login.LoginName.ToLower().Equals(adminName.ToLower())).ToList();
                 return ch.GetResult(admindatas);
             }
         }

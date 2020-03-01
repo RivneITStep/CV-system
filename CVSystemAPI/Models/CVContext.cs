@@ -17,7 +17,6 @@ namespace API_Real_Base_Test_Own_Context.Models
         }
         #region DB SETS
         public virtual DbSet<Address> Address { get; set; }
-        public virtual DbSet<AdminData> AdminData { get; set; }
         public virtual DbSet<Communication> Communication { get; set; }
         public virtual DbSet<Education> Education { get; set; }
         public virtual DbSet<Experience> Experience { get; set; }
@@ -88,18 +87,6 @@ namespace API_Real_Base_Test_Own_Context.Models
                     .HasForeignKey(d => d.PersonalId)
                     .OnDelete(DeleteBehavior.ClientSetNull)
                     .HasConstraintName("FK__Address__Persona__4BAC3F29");
-            });
-            #endregion
-
-            #region ADMIN DATA
-            modelBuilder.Entity<AdminData>(entity =>
-            {
-                entity.HasKey(e => e.AdminId)
-                    .HasName("PK__Admin_Da__4A300117E4767A63");
-
-                entity.ToTable("Admin_Data");
-
-                entity.Property(e => e.AdminId).HasColumnName("Admin_ID");
             });
             #endregion
 
@@ -252,15 +239,7 @@ namespace API_Real_Base_Test_Own_Context.Models
 
                 entity.Property(e => e.LoginAdminBinderId).HasColumnName("Login_Admin_Binder_ID");
 
-                entity.Property(e => e.AdminId).HasColumnName("Admin_ID");
-
                 entity.Property(e => e.LoginId).HasColumnName("LoginID");
-
-                entity.HasOne(d => d.Admin)
-                    .WithMany(p => p.LoginAdminBinder)
-                    .HasForeignKey(d => d.AdminId)
-                    .OnDelete(DeleteBehavior.ClientSetNull)
-                    .HasConstraintName("FK__Login_Adm__Admin__46E78A0C");
 
                 entity.HasOne(d => d.Login)
                     .WithMany(p => p.LoginAdminBinder)
