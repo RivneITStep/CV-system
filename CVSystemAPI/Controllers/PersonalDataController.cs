@@ -1,5 +1,6 @@
 ﻿using API_Real_Base_Test_Own_Context.Helpers;
 using API_Real_Base_Test_Own_Context.Models;
+using CVSystemAPI.Helpers;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using System;
@@ -13,7 +14,11 @@ namespace API_Real_Base_Test_Own_Context.Controllers
     [ApiController]
     public class PersonalDataController : Controller
     {
-        ControllerHelper ch = new ControllerHelper();
+        ControllerHelper ch;
+        public PersonalDataController()
+        {
+            ch = new ControllerHelper();
+        }
         [HttpGet]
         public IActionResult Get()
         {
@@ -56,6 +61,28 @@ namespace API_Real_Base_Test_Own_Context.Controllers
             using (CVContext db = new CVContext(OptionsHelper<CVContext>.GetOptions()))
             {
                 var users = db.PersonalData.Where(x => x.FirstName.ToLower().Equals(firstName.ToLower()) && x.LastName.ToLower().Equals(lastName.ToLower())).ToList();
+                return ch.GetResult(users);
+            }
+        }
+        [HttpGet("full/{firstName}&{lastName}")]
+        public IActionResult GetFullInfoByFullName(string firstName, string lastName)
+        {
+            using (CVContext db = new CVContext(OptionsHelper<CVContext>.GetOptions()))
+            {
+                PersonFullInfoHelper ph = new PersonFullInfoHelper();
+                var query = db.PersonalData.Where(x => x.FirstName.ToLower().Equals(firstName.ToLower()) && x.LastName.ToLower().Equals(lastName.ToLower()));
+                var users = ph.GetFullInfo(query);
+                return ch.GetResult(users);
+            }
+        }
+        [HttpGet("full/{personId}")]
+        public IActionResult GetFullInfoById(int personId)
+        {
+            using (CVContext db = new CVContext(OptionsHelper<CVContext>.GetOptions()))
+            {
+                PersonFullInfoHelper ph = new PersonFullInfoHelper();
+                var query = db.PersonalData.Where(x => x.PersonalId == personId);
+                var users = ph.GetFullInfo(query);
                 return ch.GetResult(users);
             }
         }

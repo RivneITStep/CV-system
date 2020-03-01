@@ -13,7 +13,7 @@ namespace API_Real_Base_Test_Own_Context.Helpers
         {
             if (obj == null || (obj is ICollection && (obj as ICollection).Count == 0))
             {
-                return NoContent();
+                return NotFound();
             }
             else
             {
