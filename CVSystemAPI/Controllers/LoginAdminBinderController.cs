@@ -11,7 +11,7 @@ namespace CVSystemAPI.Controllers
 {
     [Route("api/getAdminData")]
     [ApiController]
-    public class AdminDataController : Controller
+    public class LoginAdminBinderController : Controller
     {
         ControllerHelper ch = new ControllerHelper();
         [HttpGet]
