@@ -9,7 +9,7 @@ namespace CVSystemAPI.Helpers
 {
     public class FullInfoHelper
     {
-        public object GetFullInfo(IQueryable<PersonalData> personalDatas)
+        public object GetFullInfoForPersonalData(IQueryable<PersonalData> personalDatas)
         {
             var res = personalDatas.Include(q => q.Address)
                     .Include(w => w.Communication)
@@ -30,7 +30,7 @@ namespace CVSystemAPI.Helpers
             }
             return res;
         }
-        public LoginCvBinder GetFullInfoByLogin(IQueryable<LoginCvBinder> loginCvBinders)
+        public LoginCvBinder GetFullInfoForLoginBinder(IQueryable<LoginCvBinder> loginCvBinders)
         {
             var cv = loginCvBinders.Include(q => q.Login)
             .Include(x => x.Personal.Address)
@@ -42,9 +42,8 @@ namespace CVSystemAPI.Helpers
             .Include(x => x.Personal.PersonPersonalities).ThenInclude(x => x.Personality)
             .Include(x => x.Personal.PersonSoftwareSkill).ThenInclude(x => x.Skill)
             .Include(x => x.Personal.PersonTrainings).ThenInclude(x => x.Trainings)
-            .Include(x => x.Personal.SocialNetworks);
-            var list = cv.ToList();
-            var res = list[0];
+            .Include(x => x.Personal.SocialNetworks).ToList();
+            var res = cv[0];
             return res;
         }
     }

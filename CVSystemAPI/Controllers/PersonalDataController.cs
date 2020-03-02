@@ -70,7 +70,7 @@ namespace CVSystemAPI.Controllers
             {
                 FullInfoHelper fih = new FullInfoHelper();
                 var query = db.PersonalData.Where(x => x.FirstName.ToLower().Equals(firstName.ToLower()) && x.LastName.ToLower().Equals(lastName.ToLower()));
-                var users = fih.GetFullInfo(query);
+                var users = fih.GetFullInfoForPersonalData(query);
                 return ch.GetResult(users);
             }
         }
@@ -81,7 +81,7 @@ namespace CVSystemAPI.Controllers
             {
                 FullInfoHelper fih = new FullInfoHelper();
                 var query = db.PersonalData.Where(x => x.PersonalId == personId);
-                var users = fih.GetFullInfo(query);
+                var users = fih.GetFullInfoForPersonalData(query);
                 return ch.GetResult(users);
             }
         }
@@ -92,7 +92,7 @@ namespace CVSystemAPI.Controllers
             {
                 FullInfoHelper fih = new FullInfoHelper();
                 var query = db.LoginCvBinder.Where(x => x.Login.LoginName.ToLower().Equals(loginName.ToLower()));
-                var binder = fih.GetFullInfoByLogin(query);
+                var binder = fih.GetFullInfoForLoginBinder(query);
                 var cv = CVBuilderHelper.GetCVData(binder);
                 return ch.GetResult(cv);
             }
