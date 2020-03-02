@@ -7,25 +7,23 @@ namespace CVSystemAPI.Models
 {
     public class CVData
     {
-        public int Id { get; set; }
-        public int CommunicationId { get; set; }
-        public int EducationId { get; set; }
-        public int ExperienceId { get; set; }
-        public int SocialNetworksId { get; set; }
-        public int Login_CV_BinderId { get; set; }
-
+        public virtual ICollection<Address> Addresses { get; set; }
         public virtual ICollection<Communication> Communications { get; set; }
+        public virtual ICollection<Hobbies> Hobbies { get; set; }
         public virtual ICollection<Education> Educations { get; set; }
         public virtual ICollection<Experience> Experiences { get; set; }
+        public virtual ICollection<Languages> Languages { get; set; }
         public virtual ICollection<SocialNetworks> SocialNetworks { get; set; }
-        public virtual ICollection<LoginCvBinder> LoginCvBinders { get; set; }
+
         public CVData()
         {
+            Addresses = new HashSet<Address>();
             Communications = new HashSet<Communication>();
+            Hobbies = new HashSet<Hobbies>();
             Educations = new HashSet<Education>();
             Experiences = new HashSet<Experience>();
+            Languages = new HashSet<Languages>();
             SocialNetworks = new HashSet<SocialNetworks>();
-            LoginCvBinders = new HashSet<LoginCvBinder>();
         }
     }
 }

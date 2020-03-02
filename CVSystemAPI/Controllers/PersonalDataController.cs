@@ -1,6 +1,5 @@
 ﻿using CVSystemAPI.Helpers;
 using CVSystemAPI.Models;
-using CVSystemAPI.Helpers;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using System;
@@ -69,9 +68,9 @@ namespace CVSystemAPI.Controllers
         {
             using (CVContext db = new CVContext(OptionsHelper<CVContext>.GetOptions()))
             {
-                PersonFullInfoHelper ph = new PersonFullInfoHelper();
+                FullInfoHelper fih = new FullInfoHelper();
                 var query = db.PersonalData.Where(x => x.FirstName.ToLower().Equals(firstName.ToLower()) && x.LastName.ToLower().Equals(lastName.ToLower()));
-                var users = ph.GetFullInfo(query);
+                var users = fih.GetFullInfo(query);
                 return ch.GetResult(users);
             }
         }
@@ -80,10 +79,22 @@ namespace CVSystemAPI.Controllers
         {
             using (CVContext db = new CVContext(OptionsHelper<CVContext>.GetOptions()))
             {
-                PersonFullInfoHelper ph = new PersonFullInfoHelper();
+                FullInfoHelper fih = new FullInfoHelper();
                 var query = db.PersonalData.Where(x => x.PersonalId == personId);
-                var users = ph.GetFullInfo(query);
+                var users = fih.GetFullInfo(query);
                 return ch.GetResult(users);
+            }
+        }
+        [HttpGet("getCV/{loginName}")]
+        public IActionResult GetCVByLoginName(string loginName)
+        {
+            using (CVContext db = new CVContext(OptionsHelper<CVContext>.GetOptions()))
+            {
+                FullInfoHelper fih = new FullInfoHelper();
+                var query = db.LoginCvBinder.Where(x => x.Login.LoginName.ToLower().Equals(loginName.ToLower()));
+                var binder = fih.GetFullInfoByLogin(query);
+                var cv = CVBuilderHelper.GetCVData(binder);
+                return ch.GetResult(cv);
             }
         }
     }

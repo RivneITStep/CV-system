@@ -14,10 +14,5 @@ namespace CVSystemAPI.Models
         public int PersonalId { get; set; }
 
         public virtual PersonalData Personal { get; set; }
-        public virtual ICollection<CVData> CVDatas { get; set; }
-        public Communication()
-        {
-            CVDatas = new HashSet<CVData>();
-        }
     }
 }
