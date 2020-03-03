@@ -9,7 +9,7 @@ namespace CVSystemAPI.Helpers
 {
     public class ControllerHelper : Controller
     {
-        public IActionResult GetResult(object obj)
+        public IActionResult GetResultForGET(object obj)
         {
             if (obj == null || (obj is ICollection && (obj as ICollection).Count == 0))
             {
