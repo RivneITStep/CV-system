@@ -8,18 +8,18 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace CVSystemAPI.Controllers
 {
-    [Route("api/getPersonalities")]
+    [Route("api/personalities")]
     [ApiController]
     public class PersonalityController : Controller
     {
         ControllerHelper ch = new ControllerHelper();
-        [HttpGet]
+        [HttpGet("get")]
         public IActionResult Get()
         {
             using (CVContext db = new CVContext(OptionsHelper<CVContext>.GetOptions()))
             {
                 var personalities = db.Personality.ToList();
-                return ch.GetResult(personalities);
+                return ch.GetResultForGET(personalities);
             }
         }
     }

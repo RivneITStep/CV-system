@@ -8,18 +8,18 @@ using System.Threading.Tasks;
 
 namespace CVSystemAPI.Controllers
 {
-    [Route("api/getHRDatas")]
+    [Route("api/HRDatas")]
     [ApiController]
     public class HrDataController : Controller
     {
         ControllerHelper ch = new ControllerHelper();
-        [HttpGet]
+        [HttpGet("get")]
         public IActionResult Get()
         {
             using (CVContext db = new CVContext(OptionsHelper<CVContext>.GetOptions()))
             {
                 var hrdatas = db.HrData.ToList();
-                return ch.GetResult(hrdatas);
+                return ch.GetResultForGET(hrdatas);
             }
         }
     }

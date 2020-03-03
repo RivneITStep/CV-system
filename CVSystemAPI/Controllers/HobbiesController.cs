@@ -9,18 +9,18 @@ using System.Threading.Tasks;
 
 namespace CVSystemAPI.Controllers
 {
-    [Route("api/getHobbies")]
+    [Route("api/hobbies")]
     [ApiController]
     public class HobbiesController : Controller
     {
         ControllerHelper ch = new ControllerHelper();
-        [HttpGet]
+        [HttpGet("get")]
         public IActionResult Get()
         {
             using (CVContext db = new CVContext(OptionsHelper<CVContext>.GetOptions()))
             {
                 var hobbies = db.Hobbies.ToList();
-                return ch.GetResult(hobbies);
+                return ch.GetResultForGET(hobbies);
             }
         }
     }

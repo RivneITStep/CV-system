@@ -9,27 +9,27 @@ using System.Threading.Tasks;
 
 namespace CVSystemAPI.Controllers
 {
-    [Route("api/getAdminData")]
+    [Route("api/adminData")]
     [ApiController]
     public class LoginAdminBinderController : Controller
     {
         ControllerHelper ch = new ControllerHelper();
-        [HttpGet]
+        [HttpGet("get")]
         public IActionResult Get()
         {
             using (CVContext db = new CVContext(OptionsHelper<CVContext>.GetOptions()))
             {
                 var admindatas = db.LoginAdminBinder.Include(x => x.Login).ToList();
-                return ch.GetResult(admindatas);
+                return ch.GetResultForGET(admindatas);
             }
         }
-        [HttpGet("{adminName}")]
+        [HttpGet("get/{adminName}")]
         public IActionResult Get(string adminName)
         {
             using (CVContext db = new CVContext(OptionsHelper<CVContext>.GetOptions()))
             {
                 var admindatas = db.LoginAdminBinder.Include(x => x.Login).Where(y => y.Login.LoginName.ToLower().Equals(adminName.ToLower())).ToList();
-                return ch.GetResult(admindatas);
+                return ch.GetResultForGET(admindatas);
             }
         }
     }

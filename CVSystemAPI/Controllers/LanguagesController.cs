@@ -8,18 +8,18 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace CVSystemAPI.Controllers
 {
-    [Route("api/getLanguages")]
+    [Route("api/languages")]
     [ApiController]
     public class LanguagesController :Controller
     {
         ControllerHelper ch = new ControllerHelper();
-        [HttpGet]
+        [HttpGet("get")]
         public IActionResult Get()
         {
             using (CVContext db = new CVContext(OptionsHelper<CVContext>.GetOptions()))
             {
                 var languages = db.Languages.ToList();
-                return ch.GetResult(languages);
+                return ch.GetResultForGET(languages);
             }
         }
     }

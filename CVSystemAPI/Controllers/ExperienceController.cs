@@ -8,18 +8,18 @@ using System.Threading.Tasks;
 
 namespace CVSystemAPI.Controllers
 {
-    [Route("api/getExperiences")]
+    [Route("api/experiences")]
     [ApiController]
     public class ExperienceController : Controller
     {
         ControllerHelper ch = new ControllerHelper();
-        [HttpGet]
+        [HttpGet("get")]
         public IActionResult Get()
         {
             using (CVContext db = new CVContext(OptionsHelper<CVContext>.GetOptions()))
             {
                 var experiences = db.Experience.ToList();
-                return ch.GetResult(experiences);
+                return ch.GetResultForGET(experiences);
             }
         }
     }

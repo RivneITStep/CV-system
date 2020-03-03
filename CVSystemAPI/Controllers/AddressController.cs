@@ -9,27 +9,27 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace CVSystemAPI.Controllers
 {
-    [Route("api/getAddresses")]
+    [Route("api/addresses")]
     [ApiController]
     public class AddressController : Controller
     {
         ControllerHelper ch = new ControllerHelper();
-        [HttpGet]
+        [HttpGet("get")]
         public IActionResult Get()
         {
             using (CVContext db = new CVContext(OptionsHelper<CVContext>.GetOptions()))
             {
                 var addresses = db.Address.ToList();
-                return ch.GetResult(addresses);
+                return ch.GetResultForGET(addresses);
             }
         }
-        [HttpGet("getPersons/{cityName}")]
+        [HttpGet("get/persons/{cityName}")]
         public IActionResult GetPersonsByCityName(string cityName)
         {
             using (CVContext db = new CVContext(OptionsHelper<CVContext>.GetOptions()))
             {
                 var persons = db.Address.Include(x => x.Personal).Where(x => x.City.ToLower().Equals(cityName.ToLower())).Select(x=>x.Personal).ToList();
-                return ch.GetResult(persons);
+                return ch.GetResultForGET(persons);
             }
         }
     }

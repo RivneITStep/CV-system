@@ -9,27 +9,27 @@ using System.Threading.Tasks;
 
 namespace CVSystemAPI.Controllers
 {
-    [Route("api/getEducations")]
+    [Route("api/educations")]
     [ApiController]
     public class EducationController : Controller
     {
         ControllerHelper ch = new ControllerHelper();
-        [HttpGet]
+        [HttpGet("get")]
         public IActionResult Get()
         {
             using (CVContext db = new CVContext(OptionsHelper<CVContext>.GetOptions()))
             {
                 var educations = db.Education.ToList();
-                return ch.GetResult(educations);
+                return ch.GetResultForGET(educations);
             }
         }
-        [HttpGet("persons/{personId}")]
+        [HttpGet("get/persons/{personId}")]
         public IActionResult GetPersonsEducationByPersonsId(int personId)
         {
             using (CVContext db = new CVContext(OptionsHelper<CVContext>.GetOptions()))
             {
                 var persons = db.Education.Include(x => x.Personal).Where(y => y.PersonalId == personId).ToList();
-                return ch.GetResult(persons);
+                return ch.GetResultForGET(persons);
             }
         }
     }

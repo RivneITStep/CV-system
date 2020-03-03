@@ -8,18 +8,18 @@ using System.Threading.Tasks;
 
 namespace CVSystemAPI.Controllers
 {
-    [Route("api/getComunications")]
+    [Route("api/omunications")]
     [ApiController]
     public class CommunicationController : Controller
     {
         ControllerHelper ch = new ControllerHelper();
-        [HttpGet]
+        [HttpGet("get")]
         public IActionResult Get()
         {
             using (CVContext db = new CVContext(OptionsHelper<CVContext>.GetOptions()))
             {
                 var communications = db.Communication.ToList();
-                return ch.GetResult(communications);
+                return ch.GetResultForGET(communications);
             }
         }
     }
