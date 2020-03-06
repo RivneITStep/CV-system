@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace CVSystemAPI.Controllers
 {
-    [Route("api/omunications")]
+    [Route("api/comunications")]
     [ApiController]
     public class CommunicationController : Controller
     {

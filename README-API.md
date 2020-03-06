@@ -6,7 +6,7 @@ api/addresses
 - get/persons/{cityName}
 # Communication endpoints
 ## Main endpoint
-api/omunications
+api/comunications
 ### Nested endpoints
 - get
 # Education endpoints
