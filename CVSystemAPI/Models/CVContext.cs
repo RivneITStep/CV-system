@@ -71,8 +71,6 @@ namespace CVSystemAPI.Models
                     .IsRequired()
                     .HasMaxLength(100);
 
-                entity.Property(e => e.PersonalId).HasColumnName("PersonalID");
-
                 entity.Property(e => e.Street)
                     .IsRequired()
                     .HasMaxLength(100);
@@ -82,11 +80,10 @@ namespace CVSystemAPI.Models
                     .HasColumnName("Zip_Code")
                     .HasMaxLength(100);
 
-                entity.HasOne(d => d.Personal)
-                    .WithMany(p => p.Address)
-                    .HasForeignKey(d => d.PersonalId)
-                    .OnDelete(DeleteBehavior.ClientSetNull)
-                    .HasConstraintName("FK__Address__Persona__4BAC3F29");
+                entity.HasMany(x => x.Personal)
+                .WithOne(x => x.Address)
+                .HasForeignKey(x => x.AddressId)
+                .OnDelete(DeleteBehavior.ClientSetNull);
             });
             #endregion
 
@@ -443,6 +440,9 @@ namespace CVSystemAPI.Models
                     .IsRequired()
                     .HasColumnName("Last_Name")
                     .HasMaxLength(100);
+
+                entity.Property(x => x.AddressId)
+                .HasColumnName("Address_Id");
             });
             #endregion
 

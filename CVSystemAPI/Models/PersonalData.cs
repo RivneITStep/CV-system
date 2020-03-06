@@ -7,7 +7,6 @@ namespace CVSystemAPI.Models
     {
         public PersonalData()
         {
-            Address = new HashSet<Address>();
             Communication = new HashSet<Communication>();
             Education = new HashSet<Education>();
             Experience = new HashSet<Experience>();
@@ -25,8 +24,9 @@ namespace CVSystemAPI.Models
         public string FirstName { get; set; }
         public string LastName { get; set; }
         public DateTime BirthDate { get; set; }
+        public int AddressId { get; set; }
+        public virtual Address Address { get; set; }
 
-        public virtual ICollection<Address> Address { get; set; }
         public virtual ICollection<Communication> Communication { get; set; }
         public virtual ICollection<Education> Education { get; set; }
         public virtual ICollection<Experience> Experience { get; set; }
