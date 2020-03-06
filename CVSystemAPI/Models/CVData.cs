@@ -7,7 +7,7 @@ namespace CVSystemAPI.Models
 {
     public class CVData
     {
-        public virtual ICollection<Address> Addresses { get; set; }
+        public virtual Address Addresse { get; set; }
         public virtual ICollection<Communication> Communications { get; set; }
         public virtual ICollection<Hobbies> Hobbies { get; set; }
         public virtual ICollection<Education> Educations { get; set; }
@@ -17,7 +17,6 @@ namespace CVSystemAPI.Models
 
         public CVData()
         {
-            Addresses = new HashSet<Address>();
             Communications = new HashSet<Communication>();
             Hobbies = new HashSet<Hobbies>();
             Educations = new HashSet<Education>();

@@ -12,7 +12,7 @@ namespace CVSystemAPI.Helpers
         {
             CVData cv = new CVData()
             {
-                Addresses = binder.Personal.Address,
+                Addresse = binder.Personal.Address,
                 Communications = binder.Personal.Communication,
                 Educations = binder.Personal.Education,
                 Experiences = binder.Personal.Experience,
