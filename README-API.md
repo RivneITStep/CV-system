@@ -1,71 +1,38 @@
 # Address endpoints
-## Main endpoint
-api/addresses
-### Nested endpoints
-- get
-- get/persons/{cityName}
+- api/addresses/get
+- api/addresses/get/persons/{cityName}
 # Communication endpoints
-## Main endpoint
-api/comunications
-### Nested endpoints
-- get
+- api/comunications/get
 # Education endpoints
-## Main endpoint
-api/educations
-### Nested endpoints
-- get
-- get/persons/{personId}
+- api/educations/get
+- api/educations/get/persons/{personId}
 # Experience endpoints
-## Main endpoint
-api/experiences
-### Nested endpoints
-- get
+- api/experiences/get
 # Hobbies endpoints
-## Main endpoint
-api/hobbies
-### Nested endpoints
-- get
+- api/hobbies/get
 # HrData endpoints
-## Main endpoint
-api/HRDatas
-### Nested endpoints
-- get
+- api/HRDatas/get
 # Languages endpoints
-## Main endpoint
-api/languages
-### Nested endpoints
-- get
+- api/languages/get
 # LoginAdminBinder endpoints
-## Main endpoint
-api/adminData
-### Nested endpoints
-- get
-- get/{adminName}
+- api/adminData/get
+- api/adminData/get/{adminName}
 # PersonalData endpoints
-## Main endpoint
-api/persons
-### Nested endpoints
 ##### GET
-- get
-- get/{lastName}
-- get/{firstName}&{lastName}
-- get/full/{firstName}&{lastName}
-- get/full/{personId}
-- get/skill/{skillId}
-- get/skill/{skillName}
-- get/getCV/{loginName}
+- api/persons/get
+- api/persons/get/{lastName}
+- api/persons/get/{firstName}&{lastName}
+- api/persons/get/full/{firstName}&{lastName}
+- api/persons/get/full/{personId}
+- api/persons/get/skill/{skillId}
+- api/persons/get/skill/{skillName}
+- api/persons/get/getCV/{loginName}
 ##### POST
-- post
-- post/range
+- api/persons/post
+- api/persons/post/range
 # Personality endpoints
-## Main endpoint
-api/personalities
-### Nested endpoints
-- get
+- api/personalities/get
 # Personality endpoints
-## Main endpoint
-api/skills
-### Nested endpoints
-- get
-- get/person/{personId}
-- get/person/{firstName}&{lastName}
+- api/skills/get
+- api/skills/get/person/{personId}
+- api/skills/get/person/{firstName}&{lastName}
