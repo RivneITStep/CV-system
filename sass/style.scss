@@ -11,7 +11,8 @@ $colors: (
   "mattBlackLight": "#303337",
   "mattBlackDark": "#212121",
   "mattGray": "#878d8d",
-  "mattRed": "#ec6271"
+  "mattRed": "#ec6271",
+  "mattWhite":#edeff2
 );
 
 @each $colorName, $colorValue  in $colors {
@@ -37,16 +38,22 @@ body {
         left:0;
         margin:rem($margin-top) auto auto; 
         width: rem(200px);
-        border: 1px solid red;
         transition: all ease $easeTime;
         transform: translateX(-100%);
         z-index: 2000;
+        
     }
     .content{
         width: 100%;
         margin-left: rem(0px);
         transition: all ease $easeTime;
     }
+    &.active{
+        .sideMenu {
+            transform: translateX(0);
+        }
+    }
+    
  }
 
  @media (min-width:992px)
@@ -55,6 +62,11 @@ body {
      {
          .sideMenu{
              transform: translateX(0);
+             .nav-link {
+                 .icon {
+                   margin-left: rem(8px);
+                 }
+             }
          }
          .content{
              margin-left: rem(200px);
@@ -62,6 +74,15 @@ body {
         &.active{
             .sideMenu{
                 width: rem(80px);
+                .nav-link {
+                     text-align: center;
+                    .icon {
+                        margin-right: 0;
+                    }
+                    .text{
+                        display: none;
+                    }
+                }
             }
             .content{
                 margin-left: rem(80px);
@@ -84,4 +105,24 @@ body {
          justify-content: center;
          align-items: center;
      }
+     .text{
+         font-size: rem(14px);
+         @extend .text-mattGray;
+     }
+     &:hover,
+     &.active {
+         @extend .bg-mattBlackDark;
+         .icon, .text{
+             @extend .text-mattWhite;
+         }
+     }
  }
+
+
+ .dropdown-menu{
+     margin-top: rem(10px);
+    //  text-align: left;
+     .icon{
+         margin-left: rem(10px);
+     }
+    }
