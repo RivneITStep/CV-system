@@ -103,7 +103,6 @@ C:\Users\Admin\Desktop\cv-system\FOR PUSH\CV-system\CVSystemAPI\bin\Debug\netcor
 C:\Users\Admin\Desktop\cv-system\FOR PUSH\CV-system\CVSystemAPI\bin\Debug\netcoreapp3.1\Newtonsoft.Json.Bson.dll
 C:\Users\Admin\Desktop\cv-system\FOR PUSH\CV-system\CVSystemAPI\obj\Debug\netcoreapp3.1\CVSystemAPI.MvcApplicationPartsAssemblyInfo.cache
 C:\Users\Kerfoer\source\repos\CV-system-API\CVSystemAPI\obj\Debug\netcoreapp3.1\CVSystemAPI.csprojAssemblyReference.cache
-C:\Users\Kerfoer\source\repos\CV-system-API\CVSystemAPI\obj\Debug\netcoreapp3.1\CVSystemAPI.MvcApplicationPartsAssemblyInfo.cache
 C:\Users\Kerfoer\source\repos\CV-system-API\CVSystemAPI\obj\Debug\netcoreapp3.1\CVSystemAPI.AssemblyInfoInputs.cache
 C:\Users\Kerfoer\source\repos\CV-system-API\CVSystemAPI\obj\Debug\netcoreapp3.1\CVSystemAPI.AssemblyInfo.cs
 C:\Users\Kerfoer\source\repos\CV-system-API\CVSystemAPI\obj\Debug\netcoreapp3.1\CVSystemAPI.dll
@@ -156,3 +155,5 @@ C:\Users\Kerfoer\source\repos\CV-system-API\CVSystemAPI\obj\Debug\netcoreapp3.1\
 C:\Users\Kerfoer\source\repos\CV-system-API\CVSystemAPI\obj\Debug\netcoreapp3.1\CVSystemAPI.csproj.CopyComplete
 C:\Users\Kerfoer\source\repos\CV-system-API\CVSystemAPI\obj\Debug\netcoreapp3.1\staticwebassets\CVSystemAPI.StaticWebAssets.Manifest.cache
 C:\Users\Kerfoer\source\repos\CV-system-API\CVSystemAPI\obj\Debug\netcoreapp3.1\staticwebassets\CVSystemAPI.StaticWebAssets.xml
+C:\Users\Kerfoer\source\repos\CV-system-API\CVSystemAPI\bin\Debug\netcoreapp3.1\Microsoft.EntityFrameworkCore.InMemory.dll
+C:\Users\Kerfoer\source\repos\CV-system-API\CVSystemAPI\obj\Debug\netcoreapp3.1\CVSystemAPI.MvcApplicationPartsAssemblyInfo.cache
