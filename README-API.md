@@ -36,3 +36,15 @@
 - api/skills/get
 - api/skills/get/person/{personId}
 - api/skills/get/person/{firstName}&{lastName}
+# LoginCVBinder endpoints
+#### GET
+- api/loginCVbinder/get
+#### POST
+- api/loginCVbinder/post/register/{signInId}
+#### PUT
+- api/loginCVbinder/put/updatePersonalData/{signInId}
+# SignIn endpoints
+#### GET
+- api/signin/get
+#### POST
+- api/signin/post/register/{signIn}
