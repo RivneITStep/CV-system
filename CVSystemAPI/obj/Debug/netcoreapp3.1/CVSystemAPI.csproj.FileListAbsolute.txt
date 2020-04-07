@@ -156,6 +156,4 @@ C:\Users\Kerfoer\source\repos\CV-system-API\CVSystemAPI\obj\Debug\netcoreapp3.1\
 C:\Users\Kerfoer\source\repos\CV-system-API\CVSystemAPI\obj\Debug\netcoreapp3.1\staticwebassets\CVSystemAPI.StaticWebAssets.Manifest.cache
 C:\Users\Kerfoer\source\repos\CV-system-API\CVSystemAPI\obj\Debug\netcoreapp3.1\staticwebassets\CVSystemAPI.StaticWebAssets.xml
 C:\Users\Kerfoer\source\repos\CV-system-API\CVSystemAPI\bin\Debug\netcoreapp3.1\Microsoft.EntityFrameworkCore.InMemory.dll
-C:\Users\Kerfoer\source\repos\CV-system-API\CVSystemAPI\obj\Debug\netcoreapp3.1\CVSystemAPI.MvcApplicationPartsAssemblyInfo.cache
-C:\Users\Kerfoer\source\repos\CV-system-API\CVSystemAPI\obj\Debug\netcoreapp3.1\CVSystemAPI.csproj.CoreCompileInputs.cache
 C:\Users\Kerfoer\source\repos\CV-system-API\CVSystemAPI\obj\Debug\netcoreapp3.1\CVSystemAPI.genruntimeconfig.cache
