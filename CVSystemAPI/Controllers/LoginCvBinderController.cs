@@ -28,10 +28,39 @@ namespace CVSystemAPI.Controllers
                 return ch.GetResultForGET(loginCVbinders);
             }
         }
+        [HttpGet("get/{signInId}")]
+        public IActionResult GetById(int signInId)
+        {
+            if (!ModelState.IsValid || signInId < 0) // if any is invalid - return BadRequest
+            {
+                return BadRequest($"ModelState({ModelState.IsValid}) is invalid. Or signInId is invalid({signInId})");
+            }
+            using (CVContext db = new CVContext(OptionsHelper<CVContext>.GetOptions()))
+            {
+                var binder = db.LoginAdminBinder.FirstOrDefault(x => x.LoginId.Equals(signInId));
+                return ch.GetResultForGET(binder);
+            }
+        }
+        [HttpGet("get/full/{signInId}")]
+        public IActionResult GetByIdFull(int signInId)
+        {
+            if (!ModelState.IsValid || signInId < 0) // if any is invalid - return BadRequest
+            {
+                return BadRequest($"ModelState({ModelState.IsValid}) is invalid. Or signInId is invalid({signInId})");
+            }
+            using (CVContext db = new CVContext(OptionsHelper<CVContext>.GetOptions()))
+            {
+                FullInfoHelper fih = new FullInfoHelper();
+                var query = db.LoginCvBinder.Where(x => x.LoginId.Equals(signInId));
+                var binder = fih.GetFullInfoForLoginBinder(query);
+                return ch.GetResultForGET(binder);
+            }
+        }
+
         #endregion
 
         #region POSTS
-        [HttpPost("post/register/{signInId}")]
+        [HttpPost("post/register/{signInId}/{person}")]
         public IActionResult PostRegister(int signInId, [FromBody] PersonalData person)
         {
             if (person == null || !ModelState.IsValid || signInId < 0) // if any is invalid - return BadRequest
@@ -64,7 +93,7 @@ namespace CVSystemAPI.Controllers
                 }
             }
         }
-        [HttpPut("put/updatePersonalData/{signInId}")]
+        [HttpPut("put/updatePersonalData/{signInId}/{person}")]
         public IActionResult PutRegister(int signInId, [FromBody] PersonalData person)
         {
             if (person == null || !ModelState.IsValid || signInId < 0) // if any is invalid - return BadRequest

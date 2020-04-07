@@ -39,6 +39,8 @@
 # LoginCVBinder endpoints
 #### GET
 - api/loginCVbinder/get
+- api/loginCVbinder/get/{signInId}
+- api/loginCVbinder/get/full/{signInId}
 #### POST
 - api/loginCVbinder/post/register/{signInId}
 #### PUT
