@@ -4,14 +4,16 @@ using CV_System_API_New.DataDB;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace CV_System_API_New.Migrations
 {
     [DbContext(typeof(CVSystemContext))]
-    partial class CVSystemContextModelSnapshot : ModelSnapshot
+    [Migration("20200518113644_CVData_changed_2")]
+    partial class CVData_changed_2
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

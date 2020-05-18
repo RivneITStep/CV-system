@@ -4,14 +4,16 @@ using CV_System_API_New.DataDB;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace CV_System_API_New.Migrations
 {
     [DbContext(typeof(CVSystemContext))]
-    partial class CVSystemContextModelSnapshot : ModelSnapshot
+    [Migration("20200518113450_CVData_changed")]
+    partial class CVData_changed
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -56,8 +58,7 @@ namespace CV_System_API_New.Migrations
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
                     b.Property<string>("BriefInfo")
-                        .HasColumnType("nvarchar(500)")
-                        .HasMaxLength(500);
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<int?>("CVSystemUserId")
                         .HasColumnType("int");
@@ -541,28 +542,28 @@ namespace CV_System_API_New.Migrations
                         new
                         {
                             Id = 1,
-                            ConcurrencyStamp = "bd784636-e44e-412f-988a-c18a1903e2f0",
+                            ConcurrencyStamp = "630b654c-5066-41ce-a97c-7a58f56f4738",
                             Name = "Administrator",
                             NormalizedName = "ADMINISTRATOR"
                         },
                         new
                         {
                             Id = 2,
-                            ConcurrencyStamp = "b6dc3b49-c73b-4727-8cbe-66356333f88c",
+                            ConcurrencyStamp = "59eb8998-617a-4eae-b610-6e971020f2a8",
                             Name = "HumanResourceManager",
                             NormalizedName = "HUMANRESOURCEMANAGER"
                         },
                         new
                         {
                             Id = 3,
-                            ConcurrencyStamp = "ba902eec-6bbd-4efb-aec6-834237f85649",
+                            ConcurrencyStamp = "59a8f19e-2b20-4242-b7e3-af9a2040288a",
                             Name = "NormalUser",
                             NormalizedName = "NORMALUSER"
                         },
                         new
                         {
                             Id = 4,
-                            ConcurrencyStamp = "221a87c5-b1a9-4b46-bed3-18c80d4b31a6",
+                            ConcurrencyStamp = "dfee97e2-a35e-4fcc-bb67-24b734c6049d",
                             Name = "UnregisteredUser",
                             NormalizedName = "UNREGISTEREDUSER"
                         });

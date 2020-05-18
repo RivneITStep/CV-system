@@ -1,3 +1,4 @@
+using AutoMapper;
 using CV_System_API_New.DataDB;
 using CV_System_API_New.Helpers;
 using CV_System_API_New.Models;

@@ -144,7 +144,7 @@ namespace CV_System_API_New.DataDB
         public virtual DbSet<HobbyData> HobbyDatas { get; set; }
         public virtual DbSet<Skill> Skills { get; set; }
         public virtual DbSet<SkillData> SkillDatas { get; set; }
-        public virtual DbSet<AddressDTO> Addresses { get; set; }
+        public virtual DbSet<Address> Addresses { get; set; }
         public virtual DbSet<City> Cities { get; set; }
         public virtual DbSet<Country> Countries { get; set; }
         public virtual DbSet<CVData> CVDatas { get; set; }
