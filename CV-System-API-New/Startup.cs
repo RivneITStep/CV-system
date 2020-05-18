@@ -1,7 +1,3 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using CV_System_API_New.DataDB;
 using CV_System_API_New.Helpers;
 using CV_System_API_New.Models;
