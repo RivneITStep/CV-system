@@ -1,5 +1,5 @@
 ﻿using AutoMapper;
-using CV_System_API_New.DTO.ExperienceDTOs;
+using LibDTO.DTO.ExperienceDTOs;
 using CV_System_API_New.Models.ExperienceInfo;
 
 namespace CV_System_API_New.Helpers.MapperProfiles.ExperienceMap

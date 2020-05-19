@@ -1,5 +1,5 @@
 ﻿using AutoMapper;
-using CV_System_API_New.DTO;
+using LibDTO.DTO;
 using CV_System_API_New.Models;
 
 namespace CV_System_API_New.Helpers.MapperProfiles

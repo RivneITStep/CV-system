@@ -1,5 +1,5 @@
 ﻿using AutoMapper;
-using CV_System_API_New.DTO.CommunicationDTOs;
+using LibDTO.DTO.CommunicationDTOs;
 using CV_System_API_New.Models.CommunicationInfo;
 
 namespace CV_System_API_New.Helpers.MapperProfiles.CommunicationMap

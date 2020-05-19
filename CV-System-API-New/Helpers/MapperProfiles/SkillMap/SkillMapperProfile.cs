@@ -1,5 +1,5 @@
 ﻿using AutoMapper;
-using CV_System_API_New.DTO.SkillDTOs;
+using LibDTO.DTO.SkillDTOs;
 using CV_System_API_New.Models.SkillInfo;
 
 namespace CV_System_API_New.Helpers.MapperProfiles.SkillMap

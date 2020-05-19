@@ -1,5 +1,5 @@
 ﻿using AutoMapper;
-using CV_System_API_New.DTO.ManyToManyBindersDTOs;
+using LibDTO.DTO.ManyToManyBindersDTOs;
 using CV_System_API_New.Models.ManyToManyBinders;
 
 namespace CV_System_API_New.Helpers.MapperProfiles.ManyToManyBindersMap
