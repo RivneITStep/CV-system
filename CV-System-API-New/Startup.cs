@@ -9,6 +9,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using LibModelsContext.Helpers;
+using System.Reflection;
 
 namespace CV_System_API_New
 {

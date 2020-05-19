@@ -2,18 +2,16 @@
 using LibDTO.DTO.HobbyDTOs;
 using LibModelsContext.Models.HobbyInfo;
 
-namespace CV_System_API_New.Helpers.MapperProfiles.HobbyMap
+namespace CV_System_API_New.MapperProfiles.HobbyMap
 {
-    public class HobbyMapperProfile : Profile
+    public class HobbyProfile : Profile
     {
-        public HobbyMapperProfile()
+        public HobbyProfile()
         {
             CreateMap<Hobby, HobbyDTO>()
-                .ForMember(d => d.HobbyDatas, o => o.MapFrom(s => s.HobbyDatas))
                 .ForMember(d => d.CVData, o => o.Ignore());
 
             CreateMap<HobbyDTO, Hobby>()
-                .ForMember(d => d.HobbyDatas, o => o.MapFrom(s => s.HobbyDatas))
                 .ForMember(d => d.CVData, o => o.Ignore());
         }
     }

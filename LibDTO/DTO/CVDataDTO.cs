@@ -8,6 +8,7 @@ namespace LibDTO.DTO
 {
     public class CVDataDTO
     {
+        public string BriefInfo { get; set; }
         public virtual CommunicationDTO Communication { get; set; }
         public virtual EducationDTO Education { get; set; }
         public virtual ExperienceDTO Experience { get; set; }

@@ -8,18 +8,22 @@
   <ItemGroup>
     <Compile Remove="DataDB\**" />
     <Compile Remove="DTO\**" />
+    <Compile Remove="Helpers\MapperProfiles\**" />
     <Compile Remove="Migrations\**" />
     <Compile Remove="Models\**" />
     <Content Remove="DataDB\**" />
     <Content Remove="DTO\**" />
+    <Content Remove="Helpers\MapperProfiles\**" />
     <Content Remove="Migrations\**" />
     <Content Remove="Models\**" />
     <EmbeddedResource Remove="DataDB\**" />
     <EmbeddedResource Remove="DTO\**" />
+    <EmbeddedResource Remove="Helpers\MapperProfiles\**" />
     <EmbeddedResource Remove="Migrations\**" />
     <EmbeddedResource Remove="Models\**" />
     <None Remove="DataDB\**" />
     <None Remove="DTO\**" />
+    <None Remove="Helpers\MapperProfiles\**" />
     <None Remove="Migrations\**" />
     <None Remove="Models\**" />
   </ItemGroup>
@@ -52,6 +56,10 @@
   <ItemGroup>
     <ProjectReference Include="..\LibDTO\LibDTO.csproj" />
     <ProjectReference Include="..\LibModelsContext\LibModelsContext.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Helpers\" />
   </ItemGroup>
 
 </Project>

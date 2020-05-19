@@ -2,18 +2,16 @@
 using LibDTO.DTO.SkillDTOs;
 using LibModelsContext.Models.SkillInfo;
 
-namespace CV_System_API_New.Helpers.MapperProfiles.SkillMap
+namespace CV_System_API_New.MapperProfiles.SkillMap
 {
-    public class SkillMapperProfile : Profile
+    public class SkillProfile : Profile
     {
-        public SkillMapperProfile()
+        public SkillProfile()
         {
             CreateMap<Skill, SkillDTO>()
-                .ForMember(d => d.SkillDatas, o => o.MapFrom(s => s.SkillDatas))
                 .ForMember(d => d.CVData, o => o.Ignore());
 
             CreateMap<SkillDTO, Skill>()
-                .ForMember(d => d.SkillDatas, o => o.MapFrom(s => s.SkillDatas))
                 .ForMember(d => d.CVData, o => o.Ignore());
         }
     }

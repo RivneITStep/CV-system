@@ -2,18 +2,16 @@
 using LibDTO.DTO.EducationDTOs;
 using LibModelsContext.Models.EducationInfo;
 
-namespace CV_System_API_New.Helpers.MapperProfiles.EducationMap
+namespace CV_System_API_New.MapperProfiles.EducationMap
 {
-    public class EducationMapperProfile : Profile
+    public class EducationProfile : Profile
     {
-        public EducationMapperProfile()
+        public EducationProfile()
         {
             CreateMap<Education, EducationDTO>()
-                .ForMember(d => d.EducationDatas, o => o.MapFrom(s => s.EducationDatas))
                 .ForMember(d => d.CVData, o => o.Ignore());
 
             CreateMap<EducationDTO, Education>()
-                .ForMember(d => d.EducationDatas, o => o.MapFrom(s => s.EducationDatas))
                 .ForMember(d => d.CVData, o => o.Ignore());
         }
     }

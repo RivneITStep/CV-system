@@ -2,18 +2,16 @@
 using LibDTO.DTO.ExperienceDTOs;
 using LibModelsContext.Models.ExperienceInfo;
 
-namespace CV_System_API_New.Helpers.MapperProfiles.ExperienceMap
+namespace CV_System_API_New.MapperProfiles.ExperienceMap
 {
-    public class ExperienceMapperProfile : Profile
+    public class ExperienceProfile : Profile
     {
-        public ExperienceMapperProfile()
+        public ExperienceProfile()
         {
             CreateMap<Experience, ExperienceDTO>()
-                .ForMember(d => d.ExperienceDatas, o => o.MapFrom(s => s.ExperienceDatas))
                 .ForMember(d => d.CVData, o => o.Ignore());
 
             CreateMap<ExperienceDTO, Experience>()
-                .ForMember(d => d.ExperienceDatas, o => o.MapFrom(s => s.ExperienceDatas))
                 .ForMember(d => d.CVData, o => o.Ignore());
         }
     }
