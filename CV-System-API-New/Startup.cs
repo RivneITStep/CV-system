@@ -1,7 +1,6 @@
 using AutoMapper;
-using CV_System_API_New.DataDB;
-using CV_System_API_New.Helpers;
-using CV_System_API_New.Models;
+using LibModelsContext.DataDB;
+using LibModelsContext.Models;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
@@ -9,6 +8,7 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using LibModelsContext.Helpers;
 
 namespace CV_System_API_New
 {

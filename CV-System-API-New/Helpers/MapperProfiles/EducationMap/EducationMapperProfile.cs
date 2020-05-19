@@ -1,6 +1,6 @@
 ﻿using AutoMapper;
 using LibDTO.DTO.EducationDTOs;
-using CV_System_API_New.Models.EducationInfo;
+using LibModelsContext.Models.EducationInfo;
 
 namespace CV_System_API_New.Helpers.MapperProfiles.EducationMap
 {

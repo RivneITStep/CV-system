@@ -1,6 +1,6 @@
 ﻿using AutoMapper;
 using LibDTO.DTO.HobbyDTOs;
-using CV_System_API_New.Models.HobbyInfo;
+using LibModelsContext.Models.HobbyInfo;
 
 namespace CV_System_API_New.Helpers.MapperProfiles.HobbyMap
 {

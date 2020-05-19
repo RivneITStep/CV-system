@@ -1,5 +1,5 @@
-﻿using CV_System_API_New.Models;
-using CV_System_API_New.ViewModels;
+﻿using LibDTO.DTO;
+using LibModelsContext.Models;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using System;
@@ -24,17 +24,17 @@ namespace CV_System_API_New.Controllers
             return View();
         }
         [HttpPost]
-        public async Task<IActionResult> Register(RegisterViewModel model)
+        public async Task<IActionResult> Register(LoginDataDTO loginData)
         {
             if (ModelState.IsValid)
             {
-                var login = new LoginData { Email = model.Email, UserName = model.Nickname };
-                var res = await UserManager.CreateAsync(login, model.Password);
+                var login = new LoginData { Email = loginData.Email, UserName = loginData.Email };
+                var res = await UserManager.CreateAsync(login, loginData.Password);
                 if (res.Succeeded)
                 {
                     var user = new CVSystemUser { LoginData = login };
                     await SignInManager.SignInAsync(user.LoginData, false);
-                    return RedirectToAction("Index", "Home");
+                    return Ok();
                 }
                 else
                 {
@@ -42,9 +42,13 @@ namespace CV_System_API_New.Controllers
                     {
                         ModelState.AddModelError("", error.Description);
                     }
+                    return BadRequest(ModelState);
                 }
             }
-            return View(model);
+            else
+            {
+                return BadRequest();
+            }
         }
     }
 }

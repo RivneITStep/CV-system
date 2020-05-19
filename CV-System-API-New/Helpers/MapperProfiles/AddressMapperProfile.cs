@@ -1,6 +1,6 @@
 ﻿using AutoMapper;
 using LibDTO.DTO;
-using CV_System_API_New.Models;
+using LibModelsContext.Models;
 
 namespace CV_System_API_New.Helpers.MapperProfiles
 {

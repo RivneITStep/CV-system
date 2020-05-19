@@ -6,10 +6,28 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="DataDB\**" />
     <Compile Remove="DTO\**" />
+    <Compile Remove="Migrations\**" />
+    <Compile Remove="Models\**" />
+    <Content Remove="DataDB\**" />
     <Content Remove="DTO\**" />
+    <Content Remove="Migrations\**" />
+    <Content Remove="Models\**" />
+    <EmbeddedResource Remove="DataDB\**" />
     <EmbeddedResource Remove="DTO\**" />
+    <EmbeddedResource Remove="Migrations\**" />
+    <EmbeddedResource Remove="Models\**" />
+    <None Remove="DataDB\**" />
     <None Remove="DTO\**" />
+    <None Remove="Migrations\**" />
+    <None Remove="Models\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Remove="Helpers\ConnectionStringHelper.cs" />
+    <Compile Remove="Helpers\GenderHelper.cs" />
+    <Compile Remove="Helpers\UserRolesHelper.cs" />
   </ItemGroup>
 
   <ItemGroup>
@@ -33,6 +51,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\LibDTO\LibDTO.csproj" />
+    <ProjectReference Include="..\LibModelsContext\LibModelsContext.csproj" />
   </ItemGroup>
 
 </Project>
