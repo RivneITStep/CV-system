@@ -58,8 +58,4 @@
     <ProjectReference Include="..\LibModelsContext\LibModelsContext.csproj" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="Helpers\" />
-  </ItemGroup>
-
 </Project>

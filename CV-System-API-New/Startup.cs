@@ -10,6 +10,8 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using LibModelsContext.Helpers;
 using System.Reflection;
+using System.Linq;
+using CV_System_API_New.Helpers;
 
 namespace CV_System_API_New
 {
@@ -29,6 +31,7 @@ namespace CV_System_API_New
                 options.UseSqlServer(Configuration.GetConnectionString(ConnectionStringHelper.ExternalStringName)));
             // add identity and storage for identity data
             services.AddIdentity<LoginData, UserRole>().AddEntityFrameworkStores<CVSystemContext>();
+            services.AddAutoMapper(ProfilesHelper.Profiles);
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
