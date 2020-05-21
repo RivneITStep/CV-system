@@ -1,29 +1,23 @@
-﻿using LibDTO.DTO;
+﻿using AutoMapper;
+using CV_System_API_New.Controllers.GenericController;
+using LibDTO.DTO;
+using LibModelsContext.DataDB;
 using LibModelsContext.Models;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
-using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Threading.Tasks;
 
 namespace CV_System_API_New.Controllers
 {
-    public class AccountController : Controller
+    
+    [Route("api/[controller]")]
+    public class AccountController : BasicController<LoginData, LoginDataDTO>
     {
-        public UserManager<LoginData> UserManager { get; }
-        public SignInManager<LoginData> SignInManager { get; }
-        public AccountController(UserManager<LoginData> userManager, SignInManager<LoginData> signInManager)
+        public AccountController(UserManager<LoginData> userManager, SignInManager<LoginData> signInManager, CVSystemContext context, IMapper mapper) :
+            base(userManager, signInManager, context, mapper)
         {
-            UserManager = userManager;
-            SignInManager = signInManager;
         }
-        [HttpGet]
-        public IActionResult Register()
-        {
-            return View();
-        }
-        [HttpPost]
+        [HttpPost("post")]
         public async Task<IActionResult> Register(LoginDataDTO loginData)
         {
             if (ModelState.IsValid)

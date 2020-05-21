@@ -29,6 +29,8 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Compile Remove="Controllers\GenericController\BasicControllerFeatureProvider.cs" />
+    <Compile Remove="Controllers\GenericController\BasicControllerNameAttribute.cs" />
     <Compile Remove="Helpers\ConnectionStringHelper.cs" />
     <Compile Remove="Helpers\GenderHelper.cs" />
     <Compile Remove="Helpers\UserRolesHelper.cs" />

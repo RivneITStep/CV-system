@@ -12,6 +12,8 @@ using LibModelsContext.Helpers;
 using System.Reflection;
 using System.Linq;
 using CV_System_API_New.Helpers;
+using Newtonsoft.Json;
+using CV_System_API_New.Controllers.GenericController;
 
 namespace CV_System_API_New
 {
@@ -26,6 +28,10 @@ namespace CV_System_API_New
         }
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddControllers();
+            services.AddControllersWithViews()
+                .AddNewtonsoftJson
+                (options => options.SerializerSettings.ReferenceLoopHandling = ReferenceLoopHandling.Ignore);
             // add db context
             services.AddDbContext<CVSystemContext>(options =>
                 options.UseSqlServer(Configuration.GetConnectionString(ConnectionStringHelper.ExternalStringName)));
@@ -44,21 +50,20 @@ namespace CV_System_API_New
 
             app.UseHttpsRedirection();
 
-            app.UseStaticFiles();
-
             app.UseRouting();
-
+            
             app.UseAuthorization();
 
             app.UseAuthentication();
 
             app.UseEndpoints(endpoints =>
             {
-                endpoints.MapGet("/", async context =>
-                {
-                    await context.Response.WriteAsync("Hello World!");
-                });
+                endpoints.MapControllers();
             });
+
+            app.UseDefaultFiles();
+
+            app.UseStaticFiles();
         }
     }
 }
